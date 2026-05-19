@@ -3,16 +3,17 @@ import type { Task, TaskStatus } from "@/entities/task/model/types";
 import { create } from "zustand";
 
 type TaskStore = {
-  tasks: Task[];
-  sortBy: "default" | "status" | "createdAt";
-  hydrate: () => Promise<void>;
-  addTask: (task: Task) => Promise<void>;
-  removeTask: (id: string) => Promise<void>;
-  updateTaskStatus: (id: string, status: TaskStatus) => Promise<void>;
-  getTaskById: (id: string) => Task | undefined;
-  setSortBy: (sortBy: "default" | "status" | "createdAt") => void;
+  tasks: Task[]; // array of tasks
+  sortBy: "default" | "status" | "createdAt"; // sort by type
+  hydrate: () => Promise<void>; // first load tasks from storage
+  addTask: (task: Task) => Promise<void>; // add task to storage
+  removeTask: (id: string) => Promise<void>; // remove task from storage
+  updateTaskStatus: (id: string, status: TaskStatus) => Promise<void>; // update task status
+  getTaskById: (id: string) => Task | undefined; // get task by id
+  setSortBy: (sortBy: "default" | "status" | "createdAt") => void; // set sort by
 };
 
+// task store creaion using zustand
 export const useTaskStore = create<TaskStore>((set, get) => ({
   tasks: [],
   sortBy: "default",
