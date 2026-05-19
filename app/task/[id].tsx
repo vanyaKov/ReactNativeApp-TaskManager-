@@ -66,19 +66,14 @@ export default function TaskDetailPage() {
   };
   const updateTaskStatus = useTaskStore((state) => state.updateTaskStatus);
   useLayoutEffect(() => {
-    if (!task) {
-      router.back();
-      return;
-    }
-
     navigation.setOptions({
-      title: task.title,
+      title: task?.title ?? "",
       headerBackTitle: "Back",
       headerRight: () => (
         <TouchableOpacity
           style={headerButtonStyles.button}
           onPress={async () => {
-            await onDeleteTask(task.id);
+            await onDeleteTask(task?.id ?? "");
             router.back();
           }}
         >

@@ -1,5 +1,5 @@
 import { TaskCard } from "@/entities/task";
-import { useSortTasks } from "@/features/sort-tasks/model/sortTasks";
+import { useSortTasks } from "@/features/sort-tasks/useSortTasks";
 import { TaskListWidgetProps } from "@/widgets/task-list/model";
 import { router } from "expo-router";
 import { FlatList, StyleSheet } from "react-native";
