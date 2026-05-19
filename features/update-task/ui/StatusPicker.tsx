@@ -6,7 +6,8 @@ import theme from "@/shared/config/theme";
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const STATUS_OPTIONS: StatusOption[] = [
-  { label: "In Progress", value: "in_progress" },
+  { label: "Pending", value: "pending" },
+  { label: "In Process", value: "in_progress" },
   { label: "Completed", value: "completed" },
   { label: "Cancelled", value: "cancelled" },
 ];
